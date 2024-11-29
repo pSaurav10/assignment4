@@ -1,15 +1,20 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle  # Change to pickle
 import warnings
 
 # Suppress all warnings
 warnings.filterwarnings("ignore")
 
-# Load the model, scaler, and selected feature names
-model = joblib.load('model.joblib')
-scaler = joblib.load('scaler.joblib')
-selected_features = joblib.load('selected_features.joblib')
+# Load the model, scaler, and selected feature names using pickle
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
+    
+with open('scaler.pkl', 'rb') as f:
+    scaler = pickle.load(f)
+    
+with open('selected_features.pkl', 'rb') as f:
+    selected_features = pickle.load(f)
 
 # Set up the Streamlit app
 st.title("Breast Cancer Prediction App")
