@@ -1,50 +1,57 @@
-Breast Cancer Prediction Web App
+# Breast Cancer Prediction Web App
 
 This project aims to predict whether a breast tumor is malignant or benign based on various characteristics of the tumor, using machine learning techniques. The model is built using the Breast Cancer dataset provided by the sklearn library, and the model is deployed via an interactive Streamlit web application, enabling users to input tumor features and receive predictions.
-Table of Contents
 
-    Project Overview
-    Key Features
-    Technology Stack
-    Getting Started
-    Model Training
-    Streamlit Web App
-    File Descriptions
-    How to Use
-    Evaluation and Results
-    License
+## Table of Contents
 
-Project Overview
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Install Dependencies](#install-dependencies)
+- [Model Training](#model-training)
+- [Streamlit Web App](#streamlit-web-app)
+  - [Input Features](#input-features)
+  - [Predictions](#predictions)
+- [File Descriptions](#file-descriptions)
+- [How to Use](#how-to-use)
+- [Evaluation and Results](#evaluation-and-results)
+- [License](#license)
+
+## Project Overview
 
 The goal of this project is to develop a machine learning model that predicts whether a breast tumor is malignant or benign based on features such as radius, texture, perimeter, area, smoothness, concavity, etc. The model is trained using the Multi-layer Perceptron (MLP) classifier, which is tuned for optimal performance using GridSearchCV to select the best hyperparameters.
 
 The project includes two major parts:
 
-    Model Training: The model is trained in a Jupyter notebook (app.ipynb), which also includes data preprocessing, feature selection, and hyperparameter tuning.
-    Deployment with Streamlit: A web-based interface (stream.py) is built using Streamlit, allowing users to interact with the trained model and receive predictions based on their input features.
+- **Model Training**: The model is trained in a Jupyter notebook (`app.ipynb`), which also includes data preprocessing, feature selection, and hyperparameter tuning.
+- **Deployment with Streamlit**: A web-based interface (`stream.py`) is built using Streamlit, allowing users to interact with the trained model and receive predictions based on their input features.
 
-Key Features
+## Key Features
 
-    Feature Selection: The top 10 most relevant features are selected using SelectKBest to improve model performance and reduce overfitting.
-    Hyperparameter Tuning: Grid search is used to tune the model's hyperparameters (e.g., hidden layer sizes, activation functions, solver types) to achieve the best performance.
-    Web Interface: An easy-to-use Streamlit app allows users to input feature values and see predictions in real-time, including probabilities for the tumor being malignant or benign.
-    Model Persistence: The trained model, scaler, and selected features are saved using joblib, ensuring the model can be reused without retraining.
+- **Feature Selection**: The top 10 most relevant features are selected using `SelectKBest` to improve model performance and reduce overfitting.
+- **Hyperparameter Tuning**: Grid search is used to tune the model's hyperparameters (e.g., hidden layer sizes, activation functions, solver types) to achieve the best performance.
+- **Web Interface**: An easy-to-use Streamlit app allows users to input feature values and see predictions in real-time, including probabilities for the tumor being malignant or benign.
+- **Model Persistence**: The trained model, scaler, and selected features are saved using `joblib`, ensuring the model can be reused without retraining.
 
-Technology Stack
+## Technology Stack
 
-    Python: The primary programming language used.
-    scikit-learn: Machine learning library for building, training, and evaluating models.
-    Streamlit: A framework for building interactive web apps for machine learning models.
-    Joblib: For saving and loading trained models and pre-processing tools.
-    Jupyter Notebook: For exploratory data analysis, model training, and evaluation.
+- **Python**: The primary programming language used.
+- **scikit-learn**: Machine learning library for building, training, and evaluating models.
+- **Streamlit**: A framework for building interactive web apps for machine learning models.
+- **Joblib**: For saving and loading trained models and pre-processing tools.
+- **Jupyter Notebook**: For exploratory data analysis, model training, and evaluation.
 
-Getting Started
+## Getting Started
 
 To run this project locally, you'll need Python 3.7 or later installed. The following steps outline how to set up the project.
-Prerequisites
+
+### Prerequisites
 
 Make sure you have Python 3.7+ installed. You can also set up a virtual environment to keep the dependencies isolated:
 
+```bash
 python3 -m venv venv
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
