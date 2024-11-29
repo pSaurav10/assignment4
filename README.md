@@ -82,9 +82,9 @@ This will start the Jupyter Notebook server and open the notebook in your browse
 ## Streamlit Web App
 
 Once the model is trained and the necessary files are saved, you can launch the Streamlit web app by running:
-
+```bash
 streamlit run stream.py
-
+```
 This command will start a local server and open the app in your web browser. You will be able to input the tumor characteristics and get predictions in real-time.
 ### Input Features
 
@@ -105,27 +105,27 @@ The app will prompt you to enter values for the following features:
 
 Once you enter the feature values and click on "Predict", the app will:
 
--**Scale the input data using the saved scaler.joblib.**
--**Predict whether the tumor is malignant or benign using the saved model.joblib.**
--**Show the prediction result along with the probability of malignancy.**
+-Scale the input data using the saved scaler.joblib.
+-Predict whether the tumor is malignant or benign using the saved model.joblib.
+-Show the prediction result along with the probability of malignancy.
 
 ## File Descriptions
 
--**app.ipynb: Jupyter notebook for data preprocessing, model training, hyperparameter tuning, and saving the model.**
--**stream.py: Streamlit app that allows users to input features and get predictions.**
--**model.joblib: Saved machine learning model after training (best model from GridSearchCV).**
--**scaler.joblib: Saved StandardScaler used to scale the input features before feeding them into the model.**
--**selected_features.joblib: List of features selected during the feature selection process.**
+-**app.ipynb**: Jupyter notebook for data preprocessing, model training, hyperparameter tuning, and saving the model.
+-**stream.py**: Streamlit app that allows users to input features and get predictions.
+-**model.joblib**: Saved machine learning model after training (best model from GridSearchCV).
+-**scaler.joblib**: Saved StandardScaler used to scale the input features before feeding them into the model.
+-**selected_features.joblib**: List of features selected during the feature selection process.
 
 ## How to Use
 
--**Model Training: First, run the app.ipynb notebook to train the model, scale the data, and save the necessary files.**
--**Launch Streamlit: Once the model is saved, run the Streamlit app using the command:**
+-**Model Training**: First, run the app.ipynb notebook to train the model, scale the data, and save the necessary files.
+-**Launch Streamlit**: Once the model is saved, run the Streamlit app using the command:
 
 streamlit run stream.py
 
--**Input Features: In the web app, enter values for the tumor features.**
--**Get Prediction: Click the "Predict" button to receive the prediction (malignant or benign) along with the probability.**
+-**Input Features**: In the web app, enter values for the tumor features.
+-**Get Prediction**: Click the "Predict" button to receive the prediction (malignant or benign) along with the probability.
 
 ## Evaluation and Results
 
